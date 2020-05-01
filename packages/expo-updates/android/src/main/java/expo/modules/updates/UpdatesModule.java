@@ -69,12 +69,12 @@ public class UpdatesModule extends ExportedModule {
         }
 
         constants.put("isEnabled", controller.getUpdatesConfiguration().isEnabled());
-        constants.put("isUsingLocalAssets", controller.isUsingLocalAssetFiles());
+        constants.put("shouldOverrideAssetSourceResolver", controller.isUsingLocalAssetFiles());
       }
     } catch (IllegalStateException e) {
       // do nothing; this is expected in a development client
       constants.put("isEnabled", false);
-      constants.put("isUsingLocalAssets", false);
+      constants.put("shouldOverrideAssetSourceResolver", false);
     }
 
     return constants;
